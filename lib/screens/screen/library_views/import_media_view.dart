@@ -76,7 +76,7 @@ class _ImportMediaFromPlatformsViewState
                   ),
                   const SizedBox(height: 8),
                   _ImportFromBtn(
-                    btnName: AppLocalizations.of(context)!.importBloomeeFiles,
+                    btnName: AppLocalizations.of(context)!.importTuneFiles,
                     btnIcon: MingCuteIcons.mgc_file_import_fill,
                     onClickFunc: () => _importBloomeeFile(context),
                   ),
