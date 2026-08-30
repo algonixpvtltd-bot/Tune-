@@ -1,5 +1,8 @@
 name: "Build & Release"
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
     
@@ -63,10 +66,10 @@ jobs:
             - name: Rename APK file
               shell: powershell
               run: |
-                  Rename-Item -Path "build/app/outputs/flutter-apk/app-release.apk" -NewName "bloomee_tunes_android_v$env:VERSION+${{github.run_number}}_universal.apk"
-                  Rename-Item -Path "build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk" -NewName "bloomee_tunes_android_v$env:VERSION+${{github.run_number}}_armeabi-v7a.apk"
-                  Rename-Item -Path "build/app/outputs/flutter-apk/app-arm64-v8a-release.apk" -NewName "bloomee_tunes_android_v$env:VERSION+${{github.run_number}}_arm64-v8a.apk"
-                  Rename-Item -Path "build/app/outputs/flutter-apk/app-x86_64-release.apk" -NewName "bloomee_tunes_android_v$env:VERSION+${{github.run_number}}_x86_64.apk"
+                  Rename-Item -Path "build/app/outputs/flutter-apk/app-release.apk" -NewName "tune_android_v$env:VERSION+${{github.run_number}}_universal.apk"
+                  Rename-Item -Path "build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk" -NewName "tune_android_v$env:VERSION+${{github.run_number}}_armeabi-v7a.apk"
+                  Rename-Item -Path "build/app/outputs/flutter-apk/app-arm64-v8a-release.apk" -NewName "tune_android_v$env:VERSION+${{github.run_number}}_arm64-v8a.apk"
+                  Rename-Item -Path "build/app/outputs/flutter-apk/app-x86_64-release.apk" -NewName "tune_android_v$env:VERSION+${{github.run_number}}_x86_64.apk"
 
             - name: Build Windows App
               run: flutter build windows --release --build-number ${{github.run_number}}
@@ -75,35 +78,35 @@ jobs:
               run: echo ${{github.run_number}} > build-number.txt
 
             - name: Rename file
-              run: Rename-Item -Path "build/windows/x64/runner/Release/bloomee.exe" -NewName "Bloomee.exe"
+              run: Rename-Item -Path "build/windows/x64/runner/Release/bloomee.exe" -NewName "Tune.exe"
            
             - name: ZIP build
-              run: Compress-Archive -Path build/windows/x64/runner/Release/* -Destination  build/windows/x64/bloomee_tunes_windows_x64_v${{ env.VERSION }}+${{github.run_number}}.zip
+              run: Compress-Archive -Path build/windows/x64/runner/Release/* -Destination  build/windows/x64/tune_windows_x64_v${{ env.VERSION }}+${{github.run_number}}.zip
             
             - name: Upload Artifacts
               uses: actions/upload-artifact@v4
               with:
                 name: Release-Windows-Android
                 path: |
-                  build/app/outputs/flutter-apk/bloomee_tunes_android_v${{ env.VERSION }}+${{github.run_number}}_universal.apk
-                  build/windows/x64/bloomee_tunes_windows_x64_v${{ env.VERSION }}+${{github.run_number}}.zip
-                  build/app/outputs/flutter-apk/bloomee_tunes_android_v${{ env.VERSION }}+${{github.run_number}}_armeabi-v7a.apk
-                  build/app/outputs/flutter-apk/bloomee_tunes_android_v${{ env.VERSION }}+${{github.run_number}}_arm64-v8a.apk
-                  build/app/outputs/flutter-apk/bloomee_tunes_android_v${{ env.VERSION }}+${{github.run_number}}_x86_64.apk
+                  build/app/outputs/flutter-apk/tune_android_v${{ env.VERSION }}+${{github.run_number}}_universal.apk
+                  build/windows/x64/tune_windows_x64_v${{ env.VERSION }}+${{github.run_number}}.zip
+                  build/app/outputs/flutter-apk/tune_android_v${{ env.VERSION }}+${{github.run_number}}_armeabi-v7a.apk
+                  build/app/outputs/flutter-apk/tune_android_v${{ env.VERSION }}+${{github.run_number}}_arm64-v8a.apk
+                  build/app/outputs/flutter-apk/tune_android_v${{ env.VERSION }}+${{github.run_number}}_x86_64.apk
                   build-number.txt
 
             - name: Create Release
               uses: ncipollo/release-action@v1
               with:
                 artifacts: |
-                  build/app/outputs/flutter-apk/bloomee_tunes_android_v${{ env.VERSION }}+${{github.run_number}}_universal.apk
-                  build/windows/x64/bloomee_tunes_windows_x64_v${{ env.VERSION }}+${{github.run_number}}.zip
-                  build/app/outputs/flutter-apk/bloomee_tunes_android_v${{ env.VERSION }}+${{github.run_number}}_armeabi-v7a.apk
-                  build/app/outputs/flutter-apk/bloomee_tunes_android_v${{ env.VERSION }}+${{github.run_number}}_arm64-v8a.apk
-                  build/app/outputs/flutter-apk/bloomee_tunes_android_v${{ env.VERSION }}+${{github.run_number}}_x86_64.apk
+                  build/app/outputs/flutter-apk/tune_android_v${{ env.VERSION }}+${{github.run_number}}_universal.apk
+                  build/windows/x64/tune_windows_x64_v${{ env.VERSION }}+${{github.run_number}}.zip
+                  build/app/outputs/flutter-apk/tune_android_v${{ env.VERSION }}+${{github.run_number}}_armeabi-v7a.apk
+                  build/app/outputs/flutter-apk/tune_android_v${{ env.VERSION }}+${{github.run_number}}_arm64-v8a.apk
+                  build/app/outputs/flutter-apk/tune_android_v${{ env.VERSION }}+${{github.run_number}}_x86_64.apk
                   build-number.txt
                 tag: v${{ env.VERSION }}+${{github.run_number}}
-                token: ${{secrets.SECRET_KEY}}
+                token: ${{ secrets.GITHUB_TOKEN }}
                 prerelease: true
                 allowUpdates: true 
 
@@ -120,6 +123,7 @@ jobs:
               with:
                 flutter-version: '3.35.4'
                 channel: 'stable'
+                cache: true
 
             - name: Install Linux Dependencies
               run: |
@@ -139,20 +143,20 @@ jobs:
 
             - name: Compress Linux Build
               run: |
-                tar -czf bloomee_tunes_linux_x64_v${{ env.VERSION }}+${{github.run_number}}.tar.gz -C build/linux/x64/release/bundle .
+                tar -czf tune_linux_x64_v${{ env.VERSION }}+${{github.run_number}}.tar.gz -C build/linux/x64/release/bundle .
 
             - name: Upload Artifact
               uses: actions/upload-artifact@v4
               with:
                 name: Release-Linux
-                path: bloomee_tunes_linux_x64_v${{ env.VERSION }}+${{github.run_number}}.tar.gz
+                path: tune_linux_x64_v${{ env.VERSION }}+${{github.run_number}}.tar.gz
 
             - name: Publish Linux to Release
               uses: ncipollo/release-action@v1
               with:
-                artifacts: bloomee_tunes_linux_x64_v${{ env.VERSION }}+${{github.run_number}}.tar.gz
+                artifacts: tune_linux_x64_v${{ env.VERSION }}+${{github.run_number}}.tar.gz
                 tag: v${{ env.VERSION }}+${{github.run_number}}
-                token: ${{secrets.SECRET_KEY}}
+                token: ${{ secrets.GITHUB_TOKEN }}
                 prerelease: true
                 allowUpdates: true 
                 omitBodyDuringUpdate: true
