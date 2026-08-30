@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get onboardingTitle => 'Welcome to Bloomee';
+  String get onboardingTitle => 'Welcome to Tune';
 
   @override
   String get onboardingSubtitle => 'Let\'s set up your language and region.';
@@ -1010,7 +1010,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Save lyrics automatically when a song plays.';
 
   @override
-  String get storageResetApp => 'Reset Bloomee App';
+  String get storageResetApp => 'Reset Tune App';
 
   @override
   String get storageResetAppSubtitle =>
@@ -1021,7 +1021,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get storageResetConfirmMessage =>
-      'Are you sure you want to reset Bloomee? This will delete all your data and cannot be undone.';
+      'Are you sure you want to reset Tune? This will delete all your data and cannot be undone.';
 
   @override
   String get storageResetButton => 'Reset';
@@ -1130,7 +1130,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get updateCheckSubtitle =>
-      'See if a newer version of Bloomee is available.';
+      'See if a newer version of Tune is available.';
 
   @override
   String get updateAutoNotify => 'Auto Update Notify';
@@ -1143,7 +1143,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get updateCheckTitle => 'Check for Updates';
 
   @override
-  String get updateUpToDate => 'Bloomee🌸 is up-to-date!!!';
+  String get updateUpToDate => 'Tune🌸 is up-to-date!!!';
 
   @override
   String get updateViewPreRelease => 'View Latest Pre-Release';
@@ -1155,7 +1155,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get updateNewVersionAvailable =>
-      'New Version of Bloomee🌸 is now available!!';
+      'New Version of Tune🌸 is now available!!';
 
   @override
   String updateVersion(String ver, String build) {
@@ -1472,13 +1472,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutTipQuote =>
-      'Enjoying Bloomee? A small tip keeps it blooming. 🌸';
+      'Enjoying Tune? A small tip keeps it blooming. 🌸';
 
   @override
   String get aboutTipButton => 'I\'ll help';
 
   @override
-  String get aboutTipDesc => 'I want Bloomee to keep improving.';
+  String get aboutTipDesc => 'I want Tune to keep improving.';
 
   @override
   String get aboutGitHub => 'GitHub';
@@ -1539,13 +1539,13 @@ class AppLocalizationsEn extends AppLocalizations {
       'Metadata refresh is unavailable for this source';
 
   @override
-  String get songInfoSearchTitle => 'Search for this song in Bloomee';
+  String get songInfoSearchTitle => 'Search for this song in Tune';
 
   @override
-  String get songInfoSearchArtist => 'Search for this artist in Bloomee';
+  String get songInfoSearchArtist => 'Search for this artist in Tune';
 
   @override
-  String get songInfoSearchAlbum => 'Search for this album in Bloomee';
+  String get songInfoSearchAlbum => 'Search for this album in Tune';
 
   @override
   String get eqTitle => 'Equalizer';
@@ -1625,7 +1625,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'No content-importer plugins loaded.\nInstall an importer plugin to import playlists from external services.';
 
   @override
-  String get importBloomeeFiles => 'Import Bloomee Files';
+  String get importBloomeeFiles => 'Import Tune Files';
 
   @override
   String get importM3UFiles => 'Import M3U Playlist';
@@ -1644,7 +1644,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get importNoteMessage =>
-      'You can only import files created by Bloomee.\nIf your file is from another source, it will not work. Continue anyway?';
+      'You can only import files created by Tune.\nIf your file is from another source, it will not work. Continue anyway?';
 
   @override
   String get importTitle => 'Import';
@@ -1974,7 +1974,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String updateAvailableBody(String ver, String build) {
-    return 'New Version of Bloomee🌸 is now available!\n\nVersion: $ver+$build';
+    return 'New Version of Tune🌸 is now available!\n\nVersion: $ver+$build';
   }
 
   @override
