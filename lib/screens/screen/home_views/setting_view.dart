@@ -120,6 +120,14 @@ class SettingsView extends StatelessWidget {
               _SettingsSection(
                 children: [
                   _SettingsTile(
+                    title: AppLocalizations.of(context)!.updateSettingTitle,
+                    subtitle:
+                        AppLocalizations.of(context)!.updateCheckSubtitle,
+                    icon: MingCuteIcons.mgc_download_3_fill,
+                    iconColor: Default_Theme.accentColor2,
+                    onTap: () => _navigate(context, const UpdatesSettings()),
+                  ),
+                  _SettingsTile(
                     title: AppLocalizations.of(context)!.settingsAbout,
                     subtitle:
                         AppLocalizations.of(context)!.settingsAboutSubtitle,
