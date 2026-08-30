@@ -1034,7 +1034,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get storageLocationAndroid =>
-      'Backups are stored in:\n\n1. Downloads directory\n2. Android/data/ls.bloomee.musicplayer/data\n\nCopy the file from either location.';
+      'Backups are stored in:\n\n1. Downloads directory\n2. Android/data/ls.Tune.musicplayer/data\n\nCopy the file from either location.';
 
   @override
   String get storageLocationOther =>
@@ -1625,7 +1625,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'No content-importer plugins loaded.\nInstall an importer plugin to import playlists from external services.';
 
   @override
-  String get importBloomeeFiles => 'Import Tune Files';
+  String get importTuneFiles => 'Import Tune Files';
 
   @override
   String get importM3UFiles => 'Import M3U Playlist';

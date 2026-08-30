@@ -1911,7 +1911,7 @@ abstract class AppLocalizations {
   /// No description provided for @storageLocationAndroid.
   ///
   /// In en, this message translates to:
-  /// **'Backups are stored in:\n\n1. Downloads directory\n2. Android/data/ls.bloomee.musicplayer/data\n\nCopy the file from either location.'**
+  /// **'Backups are stored in:\n\n1. Downloads directory\n2. Android/data/ls.Tune.musicplayer/data\n\nCopy the file from either location.'**
   String get storageLocationAndroid;
 
   /// No description provided for @storageLocationOther.
@@ -2970,11 +2970,11 @@ abstract class AppLocalizations {
   /// **'No content-importer plugins loaded.\nInstall an importer plugin to import playlists from external services.'**
   String get importNoPluginsLoaded;
 
-  /// No description provided for @importBloomeeFiles.
+  /// No description provided for @importTuneFiles.
   ///
   /// In en, this message translates to:
   /// **'Import Tune Files'**
-  String get importBloomeeFiles;
+  String get importTuneFiles;
 
   /// No description provided for @importM3UFiles.
   ///

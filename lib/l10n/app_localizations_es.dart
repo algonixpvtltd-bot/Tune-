@@ -9,7 +9,7 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get onboardingTitle => 'Bienvenido a Bloomee';
+  String get onboardingTitle => 'Bienvenido a Tune';
 
   @override
   String get onboardingSubtitle => 'Configuremos tu idioma y región.';
@@ -1015,7 +1015,7 @@ class AppLocalizationsEs extends AppLocalizations {
       'Guardar letras automáticamente al reproducir una canción.';
 
   @override
-  String get storageResetApp => 'Restablecer Bloomee';
+  String get storageResetApp => 'Restablecer Tune';
 
   @override
   String get storageResetAppSubtitle =>
@@ -1026,7 +1026,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get storageResetConfirmMessage =>
-      '¿Estás seguro de que quieres restablecer Bloomee? Esto borrará todos tus datos y no se puede deshacer.';
+      '¿Estás seguro de que quieres restablecer Tune? Esto borrará todos tus datos y no se puede deshacer.';
 
   @override
   String get storageResetButton => 'Restablecer';
@@ -1039,7 +1039,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get storageLocationAndroid =>
-      'Las copias se guardan en:\n\n1. Directorio de Descargas\n2. Android/data/ls.bloomee.musicplayer/data\n\nCopia el archivo desde cualquiera de esas rutas.';
+      'Las copias se guardan en:\n\n1. Directorio de Descargas\n2. Android/data/ls.Tune.musicplayer/data\n\nCopia el archivo desde cualquiera de esas rutas.';
 
   @override
   String get storageLocationOther =>
@@ -1136,7 +1136,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get updateCheckSubtitle =>
-      'Comprobar si hay una versión más nueva de Bloomee.';
+      'Comprobar si hay una versión más nueva de Tune.';
 
   @override
   String get updateAutoNotify => 'Notificar actualizaciones';
@@ -1149,7 +1149,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get updateCheckTitle => 'Búsqueda de actualizaciones';
 
   @override
-  String get updateUpToDate => '¡Bloomee🌸 está al día!';
+  String get updateUpToDate => '¡Tune🌸 está al día!';
 
   @override
   String get updateViewPreRelease => 'Ver última Pre-Release';
@@ -1161,7 +1161,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get updateNewVersionAvailable =>
-      '¡Hay una nueva versión de Bloomee🌸 disponible!';
+      '¡Hay una nueva versión de Tune🌸 disponible!';
 
   @override
   String updateVersion(String ver, String build) {
@@ -1477,13 +1477,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get aboutTipQuote =>
-      '¿Te gusta Bloomee? Tu apoyo ayuda a que siga creciendo. 🌸';
+      '¿Te gusta Tune? Tu apoyo ayuda a que siga creciendo. 🌸';
 
   @override
   String get aboutTipButton => 'Quiero ayudar';
 
   @override
-  String get aboutTipDesc => 'Quiero que Bloomee siga mejorando.';
+  String get aboutTipDesc => 'Quiero que Tune siga mejorando.';
 
   @override
   String get aboutGitHub => 'GitHub';
@@ -1544,13 +1544,13 @@ class AppLocalizationsEs extends AppLocalizations {
       'Actualización no disponible para esta fuente';
 
   @override
-  String get songInfoSearchTitle => 'Buscar esta canción en Bloomee';
+  String get songInfoSearchTitle => 'Buscar esta canción en Tune';
 
   @override
-  String get songInfoSearchArtist => 'Buscar este artista en Bloomee';
+  String get songInfoSearchArtist => 'Buscar este artista en Tune';
 
   @override
-  String get songInfoSearchAlbum => 'Buscar este álbum en Bloomee';
+  String get songInfoSearchAlbum => 'Buscar este álbum en Tune';
 
   @override
   String get eqTitle => 'Ecualizador';
@@ -1629,7 +1629,7 @@ class AppLocalizationsEs extends AppLocalizations {
       'No hay plugins importadores cargados.\nInstala uno para importar desde servicios externos.';
 
   @override
-  String get importBloomeeFiles => 'Importar archivos Bloomee';
+  String get importTuneFiles => 'Importar archivos Tune';
 
   @override
   String get importM3UFiles => 'Importar lista M3U';
@@ -1649,7 +1649,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get importNoteMessage =>
-      'Solo puedes importar archivos creados por Bloomee.\nSi es de otra fuente, no funcionará. ¿Continuar?';
+      'Solo puedes importar archivos creados por Tune.\nSi es de otra fuente, no funcionará. ¿Continuar?';
 
   @override
   String get importTitle => 'Importar';
@@ -1982,7 +1982,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String updateAvailableBody(String ver, String build) {
-    return '¡Nueva versión de Bloomee🌸 disponible!\n\nVersión: $ver+$build';
+    return '¡Nueva versión de Tune🌸 disponible!\n\nVersión: $ver+$build';
   }
 
   @override
@@ -2001,7 +2001,7 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get pluginBootstrapTitle => 'Configurando Bloomee';
+  String get pluginBootstrapTitle => 'Configurando Tune';
 
   @override
   String pluginBootstrapProgress(int percent) {
@@ -2016,7 +2016,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get pluginBootstrapErrorBody =>
-      'No se instalaron algunos plugins. Puedes usar Bloomee, se reintentará en el próximo inicio.';
+      'No se instalaron algunos plugins. Puedes usar Tune, se reintentará en el próximo inicio.';
 
   @override
   String get pluginBootstrapContinue => 'Continuar de todos modos';

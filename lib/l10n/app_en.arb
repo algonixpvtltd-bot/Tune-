@@ -350,7 +350,7 @@
   "storageResetButton": "Reset",
   "storageResetSuccess": "App has been reset to its default state.",
   "storageLocationDialogTitle": "Backup Location",
-  "storageLocationAndroid": "Backups are stored in:\n\n1. Downloads directory\n2. Android/data/ls.bloomee.musicplayer/data\n\nCopy the file from either location.",
+  "storageLocationAndroid": "Backups are stored in:\n\n1. Downloads directory\n2. Android/data/ls.Tune.musicplayer/data\n\nCopy the file from either location.",
   "storageLocationOther": "Backups are stored in the Downloads directory. Copy the file from there.",
   "storageRestoreOptionsTitle": "Restore Options",
   "storageRestoreOptionsDesc": "Choose which data you want to restore from the selected backup file. Unselect any items you do NOT want to be imported. By default all are selected.",
@@ -566,7 +566,7 @@
 
   "importSongsTitle": "Import Songs",
   "importNoPluginsLoaded": "No content-importer plugins loaded.\nInstall an importer plugin to import playlists from external services.",
-  "importBloomeeFiles": "Import Tune Files",
+  "importTuneFiles": "Import Tune Files",
     "importM3UFiles": "Import M3U Playlist",
     "importM3UNameDialogTitle": "Playlist Name",
     "importM3UNameHint": "Enter a name for this playlist",
