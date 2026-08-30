@@ -32,33 +32,6 @@ The app is split into two core layers:
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-To build the project from source, you will need:
-- **Flutter SDK** (Latest stable version)
-- **Rust Toolchain** (Latest stable version)
-- **flutter_rust_bridge_codegen**
-
-### Installation & Run
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/algonixpvtltd-bot/Tune-.git
-   cd Tune-
-   ```
-2. Fetch dependencies:
-   ```bash
-   flutter pub get
-   ```
-3. Run the application:
-   ```bash
-   flutter run
-   ```
-
----
-
 ## 🤝 Contributing
 
 Contributions are always welcome! Feel free to open issues or submit pull requests to help improve the project.
