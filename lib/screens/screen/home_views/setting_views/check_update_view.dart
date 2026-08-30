@@ -115,8 +115,9 @@ class CheckUpdateView extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: FilledButton(
                         onPressed: () {
-                          launch_Url(
-                              Uri.parse("https://bloomee.sourceforge.io/"));
+                          final downloadUrl = snapshot.data?["download_url"] ??
+                              "https://github.com/algonixpvtltd-bot/Tune-/releases";
+                          launch_Url(Uri.parse(downloadUrl));
                         },
                         child: SizedBox(
                           width: 150,
