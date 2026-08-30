@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:media_kit/media_kit.dart';
@@ -154,10 +154,10 @@ class PlayerEngine {
   PlayerEngine() {
     _playerA = Player(
         configuration: const PlayerConfiguration(
-            title: 'BloomeeTunes', bufferSize: 16 * 1024 * 1024));
+            title: 'Tune', bufferSize: 16 * 1024 * 1024));
     _playerB = Player(
         configuration: const PlayerConfiguration(
-            title: 'BloomeeTunes', bufferSize: 16 * 1024 * 1024));
+            title: 'Tune', bufferSize: 16 * 1024 * 1024));
 
     _configureNativePlayer(_playerA);
     _configureNativePlayer(_playerB);

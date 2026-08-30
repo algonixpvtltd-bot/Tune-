@@ -167,7 +167,7 @@ Future<Map<String, dynamic>> sourceforgeUpdate(
 Future<Map<String, dynamic>> githubUpdate(
     {Duration timeout = const Duration(seconds: 6)}) async {
   final url =
-      'https://api.github.com/repos/HemantKArya/BloomeeTunes/releases/latest';
+      'https://api.github.com/repos/algonixpvtltd-bot/Tune-/releases/latest';
   PackageInfo packageInfo = await PackageInfo.fromPlatform();
   try {
     final response = await http.get(Uri.parse(url)).timeout(timeout);
@@ -212,36 +212,31 @@ Future<Map<String, dynamic>> githubUpdate(
   }
 }
 
-/// New public API: try GitHub first, then SourceForge; return a consistent map.
+/// New public API: try GitHub first; return a consistent map.
 Future<Map<String, dynamic>> getAppUpdates() async {
-  // Try GitHub first, then SourceForge, produce an `updates` map and attach changelogs.
+  // Try GitHub first, produce an `updates` map and attach changelogs.
   Map<String, dynamic> updates;
   try {
     updates = await githubUpdate();
   } catch (e) {
-    log('GitHub check failed, trying SourceForge: $e', name: 'UpdaterTools');
+    log('GitHub check failed: $e', name: 'UpdaterTools');
+    // Final fallback: return structured failure map with current info
     try {
-      updates = await sourceforgeUpdate();
-    } catch (e2) {
-      log('SourceForge check failed: $e2', name: 'UpdaterTools');
-      // Final fallback: return structured failure map with current info
-      try {
-        final packageInfo = await PackageInfo.fromPlatform();
-        updates = {
-          'results': false,
-          'error': 'Failed to check remote releases',
-          'currVer': packageInfo.version,
-          'currBuild': packageInfo.buildNumber,
-          'source': 'none',
-        };
-      } catch (e3) {
-        updates = {
-          'results': false,
-          'error':
-              'Failed to check remote releases and failed to read local package info',
-          'source': 'none',
-        };
-      }
+      final packageInfo = await PackageInfo.fromPlatform();
+      updates = {
+        'results': false,
+        'error': 'Failed to check remote releases',
+        'currVer': packageInfo.version,
+        'currBuild': packageInfo.buildNumber,
+        'source': 'none',
+      };
+    } catch (e3) {
+      updates = {
+        'results': false,
+        'error':
+            'Failed to check remote releases and failed to read local package info',
+        'source': 'none',
+      };
     }
   }
 
@@ -277,7 +272,7 @@ Future<Map<String, dynamic>> getAppUpdates() async {
 Future<String?> fetchChangelog(
     {Duration timeout = const Duration(seconds: 6)}) async {
   const changelogUrl =
-      'https://hemantkarya.github.io/BloomeeTunes/CHANGELOG.md';
+      'https://raw.githubusercontent.com/algonixpvtltd-bot/Tune-/main/CHANGELOG.md';
   try {
     final response = await http.get(Uri.parse(changelogUrl)).timeout(timeout);
     if (response.statusCode == 200) {
